@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "abstract_words": 122,
+    "keywords": 5,
+    "figures": 0,
+    "approx_total_tex_words": 1202,
+    "highlights": 4
+  }
+}

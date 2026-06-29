@@ -1,0 +1,19 @@
+{
+  "dataset": "official_ieee_cis_temporal_surveillance",
+  "data_root": "D:\\motif-entropy-fraud\\ieee-fraud-detection",
+  "synthetic_data_used": false,
+  "rows": 590540,
+  "train_rows": 413378,
+  "test_rows": 177162,
+  "n_blocks": 96,
+  "test_block_positive_rate": 0.2604166666666667,
+  "hierarchy": "DeviceType|card6|card4|ProductCD|P_emaildomain",
+  "prime": 61,
+  "best_proposed_method": "p_adic_cusum_temporal",
+  "best_control_method": "flat_cusum_temporal",
+  "claim_status": "diagnostic_only_failed_q1_temporal_gate",
+  "figure_dpi": [
+    599.9988,
+    599.9988
+  ]
+}

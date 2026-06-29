@@ -1,0 +1,16 @@
+{
+  "available_methods": {
+    "lightgbm": true,
+    "catboost": true,
+    "xgboost": true
+  },
+  "iterations": 200,
+  "rows": 590540,
+  "train_rows": 413378,
+  "test_rows": 177162,
+  "best_strong_auprc": 0.49546794428766405,
+  "best_augmented_auprc": 0.4951057666586805,
+  "p_adic_auprc": 0.0845032414666822,
+  "p_adic_minus_best_strong_auprc": -0.41096470282098185,
+  "best_augmented_minus_best_strong_auprc": -0.000362177628983551
+}

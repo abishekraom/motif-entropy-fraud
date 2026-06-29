@@ -1,0 +1,14 @@
+{
+  "synthetic_empirical_data_used": false,
+  "source_claim_tables": {
+    "official_ieee_cis": "results/q1_upgrade_failures/tree_scan_cusum/official_ieee_cis_tree_scan_surveillance_claims.csv",
+    "cse_cic_ids2018_thursday": "results/q1_upgrade_failures/cse_cic_thursday_tree_scan/official_cse_cic_ids2018_thursday_tree_scan_surveillance_claims.csv",
+    "cse_cic_ids2018_wednesday_2018_02_28": "results/q1_upgrade_failures/cse_cic_wednesday_tree_scan/official_cse_cic_ids2018_wednesday_2018_02_28_tree_scan_surveillance_claims.csv"
+  },
+  "dataset_count": 3,
+  "all_dataset_gates_passed": false,
+  "figure_dpi": [
+    610.0064,
+    610.0064
+  ]
+}

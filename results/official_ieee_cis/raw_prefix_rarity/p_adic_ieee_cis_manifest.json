@@ -1,0 +1,29 @@
+{
+  "quality_gate": "q1_research_grade_candidate",
+  "required_negative_controls_present": [
+    "flat_categorical",
+    "random_digit_map",
+    "random_hierarchy"
+  ],
+  "minimum_figure_dpi": 600,
+  "artifacts": {
+    "dataset_cards": [
+      "docs/rebuild/dataset_cards/ieee_cis_kaggle_competition.md"
+    ],
+    "negative_controls": [
+      "random_digit_map",
+      "random_hierarchy",
+      "flat_categorical"
+    ],
+    "figures": [
+      {
+        "path": "outputs\\p_adic_ieee_cis_official\\figures\\p_adic_ieee_cis_pr_curve.png",
+        "dpi": 600
+      }
+    ],
+    "claims_table": "outputs\\p_adic_ieee_cis_official\\tables\\p_adic_ieee_cis_claims.csv",
+    "scores": "outputs\\p_adic_ieee_cis_official\\metrics\\p_adic_ieee_cis_scores.csv",
+    "temporal_blocks": "outputs\\p_adic_ieee_cis_official\\metrics\\p_adic_ieee_cis_temporal_blocks.csv",
+    "hierarchy_selection": "outputs\\p_adic_ieee_cis_official\\metrics\\p_adic_ieee_cis_hierarchy_selection.csv"
+  }
+}

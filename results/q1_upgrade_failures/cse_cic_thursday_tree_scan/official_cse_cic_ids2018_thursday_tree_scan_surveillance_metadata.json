@@ -1,0 +1,24 @@
+{
+  "dataset": "official_cse_cic_ids2018_thursday_tree_scan_surveillance",
+  "data_root": "data/cse_cic_ids2018/Thursday-01-03-2018_TrafficForML_CICFlowMeter.csv",
+  "synthetic_data_used": false,
+  "source_dataset_card": "docs/rebuild/dataset_cards/cse_cic_ids2018_thursday_2018_03_01.md",
+  "source_urls": [
+    "https://www.unb.ca/cic/datasets/ids-2018.html",
+    "https://registry.opendata.aws/cse-cic-ids2018/"
+  ],
+  "rows": 331100,
+  "train_rows": 231769,
+  "test_rows": 99331,
+  "n_blocks": 96,
+  "positive_label_rule": "Label != Benign",
+  "hierarchy": "Protocol|dst_port_band|Dst Port|SYN Flag Cnt|ACK Flag Cnt|PSH Flag Cnt",
+  "label_leakage_guard": "attack labels are excluded from hierarchy and used only for final block metrics",
+  "best_proposed_method": "p_adic_conditional_tree_scan_llr",
+  "best_control_method": "category_entropy_temporal",
+  "claim_status": "diagnostic_only_failed_q1_tree_scan_gate",
+  "figure_dpi": [
+    610.0064,
+    610.0064
+  ]
+}

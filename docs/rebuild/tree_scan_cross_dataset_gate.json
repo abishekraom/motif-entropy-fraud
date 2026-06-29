@@ -1,0 +1,12 @@
+{
+  "required_dataset_count_minimum": 2,
+  "observed_dataset_count": 3,
+  "all_dataset_gates_passed": false,
+  "dataset_statuses": {
+    "official_ieee_cis": "diagnostic_only_failed_q1_tree_scan_gate",
+    "cse_cic_ids2018_thursday": "diagnostic_only_failed_q1_tree_scan_gate",
+    "cse_cic_ids2018_wednesday_2018_02_28": "diagnostic_only_failed_q1_tree_scan_gate"
+  },
+  "cross_dataset_status": "diagnostic_only_failed_q1_cross_dataset_gate",
+  "synthetic_empirical_data_used": false
+}

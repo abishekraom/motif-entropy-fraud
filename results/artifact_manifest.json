@@ -1,0 +1,260 @@
+[
+  {
+    "source": "outputs/p_adic_ieee_cis_official/tables/p_adic_ieee_cis_claims.csv",
+    "result_path": "results/official_ieee_cis/raw_prefix_rarity/p_adic_ieee_cis_claims.csv",
+    "bytes": 3276,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_official/tables/p_adic_ieee_cis_claims.md",
+    "result_path": "results/official_ieee_cis/raw_prefix_rarity/p_adic_ieee_cis_claims.md",
+    "bytes": 5469,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_official/figures/p_adic_ieee_cis_pr_curve.png",
+    "result_path": "results/official_ieee_cis/raw_prefix_rarity/p_adic_ieee_cis_pr_curve.png",
+    "bytes": 156068,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_official/figures/p_adic_ieee_cis_baseline_context.png",
+    "result_path": "results/official_ieee_cis/raw_prefix_rarity/p_adic_ieee_cis_baseline_context.png",
+    "bytes": 191905,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_official/manifests/p_adic_ieee_cis_manifest.json",
+    "result_path": "results/official_ieee_cis/raw_prefix_rarity/p_adic_ieee_cis_manifest.json",
+    "bytes": 1006,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_official/tables/p_adic_ieee_cis_strong_baseline_comparison.csv",
+    "result_path": "results/official_ieee_cis/strong_baselines/p_adic_ieee_cis_strong_baseline_comparison.csv",
+    "bytes": 2614,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_official/tables/p_adic_ieee_cis_strong_baseline_comparison.md",
+    "result_path": "results/official_ieee_cis/strong_baselines/p_adic_ieee_cis_strong_baseline_comparison.md",
+    "bytes": 4094,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_official/figures/p_adic_ieee_cis_strong_baseline_comparison.png",
+    "result_path": "results/official_ieee_cis/strong_baselines/p_adic_ieee_cis_strong_baseline_comparison.png",
+    "bytes": 248280,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_official/run_metadata_strong_baselines.json",
+    "result_path": "results/official_ieee_cis/strong_baselines/run_metadata_strong_baselines.json",
+    "bytes": 450,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_temporal_surveillance/tables/p_adic_ieee_cis_temporal_surveillance_claims.csv",
+    "result_path": "results/q1_upgrade_failures/temporal_surveillance/p_adic_ieee_cis_temporal_surveillance_claims.csv",
+    "bytes": 3663,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_temporal_surveillance/tables/p_adic_ieee_cis_temporal_surveillance_claims.md",
+    "result_path": "results/q1_upgrade_failures/temporal_surveillance/p_adic_ieee_cis_temporal_surveillance_claims.md",
+    "bytes": 5951,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_temporal_surveillance/metrics/p_adic_ieee_cis_temporal_surveillance_blocks.csv",
+    "result_path": "results/q1_upgrade_failures/temporal_surveillance/p_adic_ieee_cis_temporal_surveillance_blocks.csv",
+    "bytes": 33736,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_temporal_surveillance/figures/p_adic_ieee_cis_temporal_surveillance.png",
+    "result_path": "results/q1_upgrade_failures/temporal_surveillance/p_adic_ieee_cis_temporal_surveillance.png",
+    "bytes": 348975,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_temporal_surveillance/manifests/p_adic_ieee_cis_temporal_surveillance_metadata.json",
+    "result_path": "results/q1_upgrade_failures/temporal_surveillance/p_adic_ieee_cis_temporal_surveillance_metadata.json",
+    "bytes": 595,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_rich_features/tables/p_adic_ieee_cis_rich_feature_claims.csv",
+    "result_path": "results/q1_upgrade_failures/rich_features/p_adic_ieee_cis_rich_feature_claims.csv",
+    "bytes": 1810,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_rich_features/tables/p_adic_ieee_cis_rich_feature_claims.md",
+    "result_path": "results/q1_upgrade_failures/rich_features/p_adic_ieee_cis_rich_feature_claims.md",
+    "bytes": 2847,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_rich_features/figures/p_adic_ieee_cis_rich_feature_comparison.png",
+    "result_path": "results/q1_upgrade_failures/rich_features/p_adic_ieee_cis_rich_feature_comparison.png",
+    "bytes": 237011,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_rich_features/manifests/p_adic_ieee_cis_rich_feature_metadata.json",
+    "result_path": "results/q1_upgrade_failures/rich_features/p_adic_ieee_cis_rich_feature_metadata.json",
+    "bytes": 641,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_branch_signatures/tables/p_adic_ieee_cis_branch_signature_claims.csv",
+    "result_path": "results/q1_upgrade_failures/branch_signatures/p_adic_ieee_cis_branch_signature_claims.csv",
+    "bytes": 1431,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_branch_signatures/tables/p_adic_ieee_cis_branch_signature_claims.md",
+    "result_path": "results/q1_upgrade_failures/branch_signatures/p_adic_ieee_cis_branch_signature_claims.md",
+    "bytes": 2799,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_branch_signatures/tables/p_adic_ieee_cis_selected_branch_signatures.csv",
+    "result_path": "results/q1_upgrade_failures/branch_signatures/p_adic_ieee_cis_selected_branch_signatures.csv",
+    "bytes": 14922,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_branch_signatures/figures/p_adic_ieee_cis_branch_signature_lift.png",
+    "result_path": "results/q1_upgrade_failures/branch_signatures/p_adic_ieee_cis_branch_signature_lift.png",
+    "bytes": 281687,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_branch_signatures/manifests/p_adic_ieee_cis_branch_signature_metadata.json",
+    "result_path": "results/q1_upgrade_failures/branch_signatures/p_adic_ieee_cis_branch_signature_metadata.json",
+    "bytes": 537,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_preregistered_multiresolution/tables/official_ieee_cis_preregistered_multiresolution_surveillance_multiresolution_claims.csv",
+    "result_path": "results/q1_upgrade_failures/multiresolution/official_ieee_cis_preregistered_multiresolution_surveillance_multiresolution_claims.csv",
+    "bytes": 5392,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_preregistered_multiresolution/tables/official_ieee_cis_preregistered_multiresolution_surveillance_multiresolution_claims.md",
+    "result_path": "results/q1_upgrade_failures/multiresolution/official_ieee_cis_preregistered_multiresolution_surveillance_multiresolution_claims.md",
+    "bytes": 8249,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_preregistered_multiresolution/metrics/official_ieee_cis_preregistered_multiresolution_surveillance_multiresolution_blocks.csv",
+    "result_path": "results/q1_upgrade_failures/multiresolution/official_ieee_cis_preregistered_multiresolution_surveillance_multiresolution_blocks.csv",
+    "bytes": 28073,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_preregistered_multiresolution/figures/official_ieee_cis_preregistered_multiresolution_surveillance_multiresolution_gate.png",
+    "result_path": "results/q1_upgrade_failures/multiresolution/official_ieee_cis_preregistered_multiresolution_surveillance_multiresolution_gate.png",
+    "bytes": 397348,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_preregistered_multiresolution/manifests/official_ieee_cis_preregistered_multiresolution_surveillance_multiresolution_metadata.json",
+    "result_path": "results/q1_upgrade_failures/multiresolution/official_ieee_cis_preregistered_multiresolution_surveillance_multiresolution_metadata.json",
+    "bytes": 794,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_tree_scan/tables/official_ieee_cis_tree_scan_surveillance_claims.csv",
+    "result_path": "results/q1_upgrade_failures/tree_scan_cusum/official_ieee_cis_tree_scan_surveillance_claims.csv",
+    "bytes": 3782,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_tree_scan/tables/official_ieee_cis_tree_scan_surveillance_claims.md",
+    "result_path": "results/q1_upgrade_failures/tree_scan_cusum/official_ieee_cis_tree_scan_surveillance_claims.md",
+    "bytes": 5207,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_tree_scan/metrics/official_ieee_cis_tree_scan_surveillance_blocks.csv",
+    "result_path": "results/q1_upgrade_failures/tree_scan_cusum/official_ieee_cis_tree_scan_surveillance_blocks.csv",
+    "bytes": 33612,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_tree_scan/figures/official_ieee_cis_tree_scan_surveillance_gate.png",
+    "result_path": "results/q1_upgrade_failures/tree_scan_cusum/official_ieee_cis_tree_scan_surveillance_gate.png",
+    "bytes": 385935,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_ieee_cis_tree_scan/manifests/official_ieee_cis_tree_scan_surveillance_metadata.json",
+    "result_path": "results/q1_upgrade_failures/tree_scan_cusum/official_ieee_cis_tree_scan_surveillance_metadata.json",
+    "bytes": 627,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_cse_cic_thursday_tree_scan/tables/official_cse_cic_ids2018_thursday_tree_scan_surveillance_claims.csv",
+    "result_path": "results/q1_upgrade_failures/cse_cic_thursday_tree_scan/official_cse_cic_ids2018_thursday_tree_scan_surveillance_claims.csv",
+    "bytes": 3765,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_cse_cic_thursday_tree_scan/tables/official_cse_cic_ids2018_thursday_tree_scan_surveillance_claims.md",
+    "result_path": "results/q1_upgrade_failures/cse_cic_thursday_tree_scan/official_cse_cic_ids2018_thursday_tree_scan_surveillance_claims.md",
+    "bytes": 5221,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_cse_cic_thursday_tree_scan/metrics/official_cse_cic_ids2018_thursday_tree_scan_surveillance_blocks.csv",
+    "result_path": "results/q1_upgrade_failures/cse_cic_thursday_tree_scan/official_cse_cic_ids2018_thursday_tree_scan_surveillance_blocks.csv",
+    "bytes": 33380,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_cse_cic_thursday_tree_scan/figures/official_cse_cic_ids2018_thursday_tree_scan_surveillance_gate.png",
+    "result_path": "results/q1_upgrade_failures/cse_cic_thursday_tree_scan/official_cse_cic_ids2018_thursday_tree_scan_surveillance_gate.png",
+    "bytes": 491277,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_cse_cic_thursday_tree_scan/manifests/official_cse_cic_ids2018_thursday_tree_scan_surveillance_metadata.json",
+    "result_path": "results/q1_upgrade_failures/cse_cic_thursday_tree_scan/official_cse_cic_ids2018_thursday_tree_scan_surveillance_metadata.json",
+    "bytes": 994,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_cse_cic_wednesday_tree_scan/tables/official_cse_cic_ids2018_wednesday_2018_02_28_tree_scan_surveillance_claims.csv",
+    "result_path": "results/q1_upgrade_failures/cse_cic_wednesday_tree_scan/official_cse_cic_ids2018_wednesday_2018_02_28_tree_scan_surveillance_claims.csv",
+    "bytes": 3791,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_cse_cic_wednesday_tree_scan/tables/official_cse_cic_ids2018_wednesday_2018_02_28_tree_scan_surveillance_claims.md",
+    "result_path": "results/q1_upgrade_failures/cse_cic_wednesday_tree_scan/official_cse_cic_ids2018_wednesday_2018_02_28_tree_scan_surveillance_claims.md",
+    "bytes": 5221,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_cse_cic_wednesday_tree_scan/metrics/official_cse_cic_ids2018_wednesday_2018_02_28_tree_scan_surveillance_blocks.csv",
+    "result_path": "results/q1_upgrade_failures/cse_cic_wednesday_tree_scan/official_cse_cic_ids2018_wednesday_2018_02_28_tree_scan_surveillance_blocks.csv",
+    "bytes": 34075,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_cse_cic_wednesday_tree_scan/figures/official_cse_cic_ids2018_wednesday_2018_02_28_tree_scan_surveillance_gate.png",
+    "result_path": "results/q1_upgrade_failures/cse_cic_wednesday_tree_scan/official_cse_cic_ids2018_wednesday_2018_02_28_tree_scan_surveillance_gate.png",
+    "bytes": 435275,
+    "copied": true
+  },
+  {
+    "source": "outputs/p_adic_cse_cic_wednesday_tree_scan/manifests/official_cse_cic_ids2018_wednesday_2018_02_28_tree_scan_surveillance_metadata.json",
+    "result_path": "results/q1_upgrade_failures/cse_cic_wednesday_tree_scan/official_cse_cic_ids2018_wednesday_2018_02_28_tree_scan_surveillance_metadata.json",
+    "bytes": 1143,
+    "copied": true
+  }
+]

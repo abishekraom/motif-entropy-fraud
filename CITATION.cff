@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "Motif Entropy Fraud"
+message: "If you use this software or its curated audit artifacts, please cite the SoftwareX article and this repository release."
+type: software
+authors:
+  - family-names: Rao M
+    given-names: Abishek
+repository-code: "https://github.com/abishekraom/motif-entropy-fraud"
+abstract: "Fail-closed p-adic and motif-style audit pipeline for hierarchy-aware fraud and event-stream surveillance hypotheses."
+keywords:
+  - fraud detection
+  - p-adic encoding
+  - categorical event streams
+  - reproducibility
+  - research software
+license: MIT
+version: 0.1.0
+date-released: 2026-06-29

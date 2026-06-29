@@ -1,0 +1,23 @@
+{
+  "dataset": "official_ieee_cis_rich_padic_features",
+  "data_root": "D:\\motif-entropy-fraud\\ieee-fraud-detection",
+  "synthetic_data_used": false,
+  "rows": 590540,
+  "train_rows": 413378,
+  "test_rows": 177162,
+  "test_fraud_rate": 0.034572876802023006,
+  "iterations": 200,
+  "methods": [
+    "lightgbm",
+    "catboost",
+    "xgboost"
+  ],
+  "best_strong_auprc": 0.49546794428766405,
+  "best_rich_augmented_auprc": 0.494321256696385,
+  "best_rich_minus_best_strong_auprc": -0.0011466875912790608,
+  "claim_status": "diagnostic_only_failed_q1_rich_feature_gate",
+  "figure_dpi": [
+    599.9988,
+    599.9988
+  ]
+}

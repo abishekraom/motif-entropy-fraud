@@ -1,0 +1,11 @@
+claim,status,evidence_artifact,verification_command,paper_position
+Software provides a reproducible fail-closed audit pipeline,defensible,README.md; src/motif_fraud; tests/; results/,python -m compileall -q src tests; pytest targeted tests,Core SoftwareX motivation
+Raw p-adic prefix rarity is below strong supervised IEEE-CIS baselines,defensible,results/official_ieee_cis/strong_baselines/p_adic_ieee_cis_strong_baseline_comparison.csv,Recorded artifact; regenerate via strong_baselines audit when deps/data available,Motivation / impact limitation
+Best LightGBM compact tabular AUPRC is 0.49547 on official IEEE-CIS,defensible,results/official_ieee_cis/strong_baselines/p_adic_ieee_cis_strong_baseline_comparison.csv,Artifact-backed,Results context
+Raw p-adic selected hierarchy AUPRC is 0.08450 on official IEEE-CIS,defensible,results/official_ieee_cis/raw_prefix_rarity/p_adic_ieee_cis_claims.csv,Artifact-backed,Results context
+Parent-conditional tree scan improves raw tree scan on IEEE-CIS and both CSE-CIC days,defensible,docs/rebuild/tree_scan_theory_diagnostics.md,python -m motif_fraud.p_adic.tree_scan_theory,Software functionality / diagnostic value
+IEEE-CIS conditional tree scan has positive point delta but CI crosses zero,defensible,results/q1_upgrade_failures/tree_scan_cusum/official_ieee_cis_tree_scan_surveillance_claims.csv,python -m motif_fraud.p_adic.tree_scan_cusum --dataset ieee,Illustrative example
+CSE-CIC Thursday and Wednesday fail against category entropy control,defensible,results/q1_upgrade_failures/cse_cic_thursday_tree_scan/*.csv; results/q1_upgrade_failures/cse_cic_wednesday_tree_scan/*.csv,tree_scan_cusum CSE commands,Impact / limitations
+No synthetic empirical data were used for the reported final gates,defensible,docs/rebuild/25/26/29 gate docs; metadata JSON files,inspect metadata artifacts,Reproducibility
+The software is currently submission-ready for SoftwareX,unsafe until blocker resolved,SoftwareX guide requires public GitHub URL,final readiness checker,Do not claim until public GitHub exists
+The method is a SOTA or statistically superior fraud detector,unsafe,all fail-closed claim tables,claim audit,Banned claim

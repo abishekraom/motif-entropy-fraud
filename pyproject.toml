@@ -1,0 +1,37 @@
+[project]
+name = "motif-entropy-fraud"
+version = "0.1.0"
+description = "Reproducible Python pipeline for directed motif CUSUM fraud surveillance"
+readme = "README.md"
+license = { file = "LICENSE.txt" }
+authors = [{ name = "Abishek Rao M" }]
+requires-python = ">=3.11"
+dependencies = [
+  "numpy",
+  "pandas",
+  "networkx",
+  "scipy",
+  "scikit-learn",
+  "matplotlib",
+  "pyyaml",
+  "pillow",
+  "tabulate",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "seaborn"]
+strong-baselines = ["lightgbm", "catboost", "xgboost"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = [
+  'ignore:datetime.datetime.utcfromtimestamp\(\) is deprecated:DeprecationWarning:dateutil.tz.tz',
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.motif_fraud]
+project_root = "."

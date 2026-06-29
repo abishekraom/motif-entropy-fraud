@@ -1,0 +1,150 @@
+\documentclass[journal]{IEEEtran}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{cite}
+
+\title{Non-Archimedean Prefix-Rarity Signals for Temporal Fraud Surveillance}
+
+\author{Abishek Rao M. and Vaelthron%
+\thanks{Artifact-backed draft generated from the reproducible repository at D:/motif-entropy-fraud/motif-entropy-fraud. This manuscript draft intentionally uses narrow, claim-audited language.}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Fraud detection in transaction streams often depends on sparse categorical combinations whose hierarchy is lost under flat encodings. This letter studies a non-Archimedean representation of transaction categories, where coarse-to-fine categorical fields define a $p$-adic prefix signal and anomaly scores are derived from prefix rarity under a temporal training split. On the official IEEE-CIS fraud dataset, a train-selected hierarchy \emph{DeviceType $\rightarrow$ card6 $\rightarrow$ card4 $\rightarrow$ ProductCD $\rightarrow$ P\_emaildomain} yields an unsupervised $p$-adic prefix-rarity signal with AUPRC $0.0845$ and ROC-AUC $0.7011$ on the held-out temporal test set. The signal improves over flat categorical rarity (AUPRC $0.0575$) and reversed-hierarchy control (AUPRC $0.0450$), with positive bootstrap AUPRC-delta intervals. A broader baseline audit shows that the raw $p$-adic signal does not beat supervised logistic frequency features (AUPRC $0.0975$) or compact gradient-boosted tabular baselines: LightGBM reaches AUPRC $0.4955$, XGBoost $0.4848$, and CatBoost $0.4637$. Adding the $p$-adic score improves logistic features and CatBoost, but not the strongest LightGBM baseline. These results support a narrow claim: $p$-adic prefix-rarity is an interpretable temporal categorical signal, not a competitive standalone fraud detector.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Fraud detection, anomaly detection, $p$-adic metric, ultrametric learning, categorical time series, non-Archimedean signal processing.
+\end{IEEEkeywords}
+
+\section{Introduction and Related Positioning}
+Transaction fraud streams contain mixed categorical fields such as device type, card type, product code, and email domain. Standard flat encodings treat these fields as independent or unordered symbols. This loses the possibility that categorical fields can form a coarse-to-fine hierarchy. Non-Archimedean metrics, especially $p$-adic prefix geometry, naturally encode hierarchical agreement: records sharing coarse prefixes remain close, while early disagreements become far.
+
+The related literature already covers $p$-adic and ultrametric machine learning \cite{khrennikov2023padicdbn,padicboltzmann2023,ultrametriccommittee2012}, categorical anomaly detection \cite{akoglu2019categorical}, hierarchical anomaly detection \cite{tuli2021hierarchical}, and broad fraud-detection machine learning \cite{bhattacharyya2016survey,carcillo2021fraudagenda,mangalathu2021explainablefraud}. Consequently, this work does not claim to introduce $p$-adic machine learning or fraud detection. Its contribution is narrower: a $p$-adic prefix-rarity statistic for temporal categorical fraud surveillance, validated against flat-rarity and hierarchy-order controls and tested for complementarity with a supervised frequency baseline.
+
+The contribution is threefold. First, we define a prefix-rarity score on $p$-adic encodings of categorical transaction streams. Second, we select hierarchy order using only an inner temporal validation split, then evaluate on held-out future transactions. Third, we provide artifact-backed controls, broader baselines, external support, and claim-audited reproducibility.
+
+\section{Method}
+\subsection{Temporal Categorical Stream}
+Let each transaction at time $t$ be represented by a categorical tuple
+\begin{equation}
+  x_t = (c_{t,1}, c_{t,2}, \ldots, c_{t,d}),
+\end{equation}
+where fields are ordered from coarse to fine. On IEEE-CIS \cite{ieeecis2019}, the selected hierarchy is DeviceType $\rightarrow$ card6 $\rightarrow$ card4 $\rightarrow$ ProductCD $\rightarrow$ P\_emaildomain. This order is selected on an inner temporal validation split within the training portion only.
+
+\subsection{$p$-adic Prefix Encoding}
+Each category at hierarchy level $j$ is mapped to a digit $a_{t,j}\in\{0,\ldots,p-1\}$ for a prime $p$ large enough to represent all observed training categories plus an out-of-vocabulary token. A transaction is encoded as
+\begin{equation}
+  z_t = \sum_{j=0}^{d-1} a_{t,j}p^j.
+\end{equation}
+The $p$-adic distance between two codes is
+\begin{equation}
+  d_p(z_t,z_s)=|z_t-z_s|_p,
+\end{equation}
+so agreement on longer coarse-to-fine prefixes corresponds to smaller non-Archimedean distance. Within-level digit relabeling is an invariance check, not a semantic claim about digit magnitude.
+
+\subsection{Prefix-Rarity Score}
+Let $\mathcal{N}$ be non-fraud training transactions. For each test transaction, the score aggregates rarity of its prefixes relative to $\mathcal{N}$:
+\begin{equation}
+  r(x_t)=\sum_{\ell=1}^{d} w_\ell\left(1-\hat{P}_{\mathcal{N}}[\pi_\ell(x)=\pi_\ell(x_t)]\right),
+\end{equation}
+where $\pi_\ell$ is the length-$\ell$ hierarchy prefix and $w_\ell$ emphasizes deeper prefixes. The statistic is unsupervised with respect to fraud labels except for excluding known fraud from the normal reference set in training.
+
+\section{Experiments}
+The primary dataset is official IEEE-CIS Fraud Detection \cite{ieeecis2019}. The local audit uses a temporal split by \texttt{TransactionDT}: 590,540 total transactions, 413,378 training transactions, and 177,162 held-out test transactions. The test fraud rate is 0.03457.
+
+We compare the proposed signal with flat tuple rarity, reversed hierarchy, random digit-map invariance checks, Isolation Forest on frequency features, supervised logistic frequency features, LightGBM, CatBoost, XGBoost, and the corresponding models augmented with the $p$-adic score. A second vehicle-insurance fraud dataset \cite{vehicleclaimkaggle} is used as external support, not as a primary benchmark, because its temporal resolution is coarser.
+
+All artifacts are reproducible through:
+\begin{verbatim}
+python -m motif_fraud.p_adic.reproduce_all --skip-tests
+pytest -q
+\end{verbatim}
+The latest verified test result is 44 passing tests.
+
+\section{Results}
+\subsection{IEEE-CIS Control Gate}
+Table~\ref{tab:controls} shows that the selected $p$-adic hierarchy beats both material controls. Random digit-map checks match the proposed score, as expected for prefix/equality geometry.
+
+\begin{table}[!t]
+\centering
+\caption{Official IEEE-CIS control audit. The proposed signal beats flat categorical rarity and reversed hierarchy.}
+\label{tab:controls}
+\begin{tabular}{lccc}
+\toprule
+Method & AUPRC & ROC-AUC & R@1\%FPR \\
+\midrule
+$p$-adic hierarchy & 0.08450 & 0.70111 & 0.04800 \\
+Flat rarity & 0.05747 & 0.66498 & 0.02204 \\
+Reversed hierarchy & 0.04499 & 0.61341 & 0.00947 \\
+Digit-map check & 0.08450 & 0.70111 & 0.04800 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The bootstrap AUPRC delta interval against reversed hierarchy is $[0.03672,0.04279]$ with empirical $p(\Delta\leq0)=0.0$. Against flat categorical rarity, the interval is $[0.02435,0.02991]$.
+
+\subsection{Broader Baseline Context}
+Table~\ref{tab:baselines} gives the key caveat. The raw $p$-adic signal is not the strongest detector. Logistic frequency features outperform raw $p$-adic scores, and compact gradient-boosted tabular baselines are much stronger. Adding the $p$-adic signal improves logistic AUPRC and CatBoost AUPRC, but it does not improve the strongest LightGBM AUPRC.
+
+\begin{table}[!t]
+\centering
+\caption{Broader IEEE-CIS baseline context. The $p$-adic signal is not competitive with compact supervised gradient-boosted tabular models.}
+\label{tab:baselines}
+\begin{tabular}{lcc}
+\toprule
+Method & AUPRC & ROC-AUC \\
+\midrule
+$p$-adic selected hierarchy & 0.08450 & 0.70111 \\
+Logistic frequency & 0.09747 & 0.72726 \\
+Logistic frequency + $p$-adic & 0.10067 & 0.72538 \\
+Isolation Forest frequency & 0.07579 & 0.71514 \\
+LightGBM compact tabular & 0.49547 & 0.90487 \\
+LightGBM + $p$-adic & 0.49511 & 0.90609 \\
+CatBoost compact tabular & 0.46368 & 0.88681 \\
+CatBoost + $p$-adic & 0.47092 & 0.89244 \\
+XGBoost compact tabular & 0.48483 & 0.90064 \\
+XGBoost + $p$-adic & 0.48334 & 0.89854 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{External Vehicle-Claim Support}
+On the vehicle insurance claim fraud dataset, the selected hierarchy is AccidentArea $\rightarrow$ PolicyType $\rightarrow$ VehicleCategory $\rightarrow$ BasePolicy $\rightarrow$ Make $\rightarrow$ Fault. The $p$-adic signal obtains AUPRC 0.06424 and ROC-AUC 0.55028, beating flat tuple rarity (AUPRC 0.05617) and reversed hierarchy (AUPRC 0.04677). The effect is supportive but modest.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\linewidth]{../../outputs/p_adic_ieee_cis_official/figures/p_adic_ieee_cis_control_ablation.png}
+\caption{Control ablation on official IEEE-CIS. The selected $p$-adic hierarchy improves over flat rarity and reversed hierarchy.}
+\label{fig:control}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\linewidth]{../../outputs/p_adic_ieee_cis_official/figures/p_adic_ieee_cis_baseline_context.png}
+\caption{Broader baseline context. The raw $p$-adic signal is not the strongest detector, but it provides complementary AUPRC when added to logistic frequency features.}
+\label{fig:baseline}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\linewidth]{../../outputs/p_adic_ieee_cis_official/figures/p_adic_ieee_cis_temporal_signal.png}
+\caption{Temporal block view of the $p$-adic prefix-rarity signal and fraud rate on the held-out IEEE-CIS split.}
+\label{fig:temporal}
+\end{figure}
+
+\section{Limitations}
+The method should be interpreted as an interpretable hierarchy-aware signal, not a universal standalone fraud detector. The raw $p$-adic score does not beat supervised logistic frequency features, and it is far below compact LightGBM, CatBoost, and XGBoost baselines on IEEE-CIS. Adding the $p$-adic score gives model-specific auxiliary value for logistic features and CatBoost, but not for the strongest LightGBM baseline. The external vehicle-claim result is supportive but weaker, with coarse temporal ordering and modest AUPRC lift. Finally, because arbitrary within-level digit labels are not semantic, claims must refer to prefix structure rather than numeric digit meaning.
+
+\section{Conclusion}
+A train-selected non-Archimedean prefix-rarity signal survives flat-rarity and hierarchy-order controls on official IEEE-CIS. It gives model-specific auxiliary value for logistic features and CatBoost, but not for the strongest LightGBM baseline. External vehicle-claim results provide weaker support. These findings justify an IEEE SPL-style claim around compact interpretable categorical signal processing, not state-of-the-art fraud detection.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

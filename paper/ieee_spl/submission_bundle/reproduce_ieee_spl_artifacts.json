@@ -1,0 +1,71 @@
+[
+  {
+    "name": "unit_and_artifact_tests",
+    "command": "pytest -q",
+    "argv": [
+      "pytest",
+      "-q"
+    ],
+    "artifact_check": "test suite must pass"
+  },
+  {
+    "name": "official_ieee_cis_padic_audit",
+    "command": "python -m motif_fraud.p_adic.ieee_pipeline",
+    "argv": [
+      "python",
+      "-m",
+      "motif_fraud.p_adic.ieee_pipeline"
+    ],
+    "artifact_check": "outputs/p_adic_ieee_cis_official/tables/p_adic_ieee_cis_claims.csv"
+  },
+  {
+    "name": "official_ieee_cis_baseline_context",
+    "command": "python -m motif_fraud.p_adic.official_baselines",
+    "argv": [
+      "python",
+      "-m",
+      "motif_fraud.p_adic.official_baselines"
+    ],
+    "artifact_check": "outputs/p_adic_ieee_cis_official/tables/p_adic_ieee_cis_baseline_comparison.csv"
+  },
+  {
+    "name": "official_ieee_cis_publication_figures",
+    "command": "python -m motif_fraud.p_adic.publication_figures",
+    "argv": [
+      "python",
+      "-m",
+      "motif_fraud.p_adic.publication_figures"
+    ],
+    "artifact_check": "outputs/p_adic_ieee_cis_official/figures/p_adic_ieee_cis_temporal_signal.png"
+  },
+  {
+    "name": "official_ieee_cis_strong_baseline_audit",
+    "command": "python -m motif_fraud.p_adic.strong_baselines",
+    "argv": [
+      "python",
+      "-m",
+      "motif_fraud.p_adic.strong_baselines"
+    ],
+    "artifact_check": "outputs/p_adic_ieee_cis_official/tables/p_adic_ieee_cis_strong_baseline_comparison.csv"
+  },
+  {
+    "name": "vehicle_claim_external_validation",
+    "command": "python -m motif_fraud.p_adic.vehicle_claim_pipeline",
+    "argv": [
+      "python",
+      "-m",
+      "motif_fraud.p_adic.vehicle_claim_pipeline"
+    ],
+    "artifact_check": "outputs/p_adic_vehicle_claim/tables/p_adic_vehicle_claim_claims.csv"
+  },
+  {
+    "name": "claim_audit",
+    "command": "python -m motif_fraud.p_adic.claim_audit",
+    "argv": [
+      "python",
+      "-m",
+      "motif_fraud.p_adic.claim_audit"
+    ],
+    "artifact_check": "docs/rebuild/ieee_spl_claim_audit.csv"
+  }
+]

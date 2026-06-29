@@ -1,0 +1,18 @@
+{
+  "dataset": "official_ieee_cis_tree_scan_surveillance",
+  "data_root": "D:\\motif-entropy-fraud\\ieee-fraud-detection",
+  "synthetic_data_used": false,
+  "spec_doc": "docs/rebuild/23_P_ADIC_TREE_SCAN_CUSUM_Q1_SPEC_AND_DECISION.md",
+  "rows": 590540,
+  "train_rows": 413378,
+  "test_rows": 177162,
+  "n_blocks": 96,
+  "hierarchy": "DeviceType|card6|card4|ProductCD|P_emaildomain",
+  "best_proposed_method": "p_adic_conditional_tree_scan_llr",
+  "best_control_method": "transaction_count_signal",
+  "claim_status": "diagnostic_only_failed_q1_tree_scan_gate",
+  "figure_dpi": [
+    610.0064,
+    610.0064
+  ]
+}

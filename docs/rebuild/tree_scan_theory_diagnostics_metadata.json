@@ -1,0 +1,18 @@
+{
+  "synthetic_empirical_data_used": false,
+  "claim_tables": {
+    "official_ieee_cis": "results/q1_upgrade_failures/tree_scan_cusum/official_ieee_cis_tree_scan_surveillance_claims.csv",
+    "cse_cic_ids2018_thursday": "results/q1_upgrade_failures/cse_cic_thursday_tree_scan/official_cse_cic_ids2018_thursday_tree_scan_surveillance_claims.csv",
+    "cse_cic_ids2018_wednesday_2018_02_28": "results/q1_upgrade_failures/cse_cic_wednesday_tree_scan/official_cse_cic_ids2018_wednesday_2018_02_28_tree_scan_surveillance_claims.csv"
+  },
+  "summary_rows": 3,
+  "theory_rows": 3,
+  "claim_statuses": [
+    "diagnostic_only_failed_q1_tree_scan_gate"
+  ],
+  "failure_modes": [
+    "entropy_dominance",
+    "uncertain_positive_delta"
+  ],
+  "cross_dataset_status": "diagnostic_only_failed_q1_cross_dataset_gate"
+}

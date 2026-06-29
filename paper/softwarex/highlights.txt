@@ -1,0 +1,4 @@
+Fail-closed audit pipeline for hierarchy-aware fraud surveillance.
+Curated artifacts map every paper claim to reproducible evidence.
+Tree-scan diagnostics expose entropy and count-control failure modes.
+SoftwareX draft avoids unsupported detector-superiority claims.

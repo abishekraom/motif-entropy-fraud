@@ -1,0 +1,18 @@
+{
+  "dataset": "official_ieee_cis_branch_signatures",
+  "data_root": "D:\\motif-entropy-fraud\\ieee-fraud-detection",
+  "synthetic_data_used": false,
+  "selection_scope": "train_only",
+  "rows": 590540,
+  "train_rows": 413378,
+  "test_rows": 177162,
+  "test_fraud_rate": 0.034572876802023006,
+  "min_train_support": 200,
+  "top_k": 30,
+  "hierarchy": "DeviceType|card6|card4|ProductCD|P_emaildomain",
+  "claim_status": "diagnostic_only_failed_q1_interpretability_gate",
+  "figure_dpi": [
+    599.9988,
+    599.9988
+  ]
+}

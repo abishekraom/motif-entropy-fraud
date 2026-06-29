@@ -1,0 +1,52 @@
+[
+  {
+    "file": "compile_status.md",
+    "bytes": 4200,
+    "sha256": "f9d3ffec2f45ec1828cd8cfc0df778c78ab3938f0f916e5dfb5ab099ce5c4655"
+  },
+  {
+    "file": "ieee_spl_claim_audit.csv",
+    "bytes": 2578,
+    "sha256": "5be6d452dfc8796f88e024b04a2dd673a0c6adf14f0193e62d8dc1164a96ff0a"
+  },
+  {
+    "file": "p_adic_prefix_rarity_spl.pdf",
+    "bytes": 920625,
+    "sha256": "ad1bb5a395e7ecb98749ace118a4d99621f6708e2417ec6529dd59297d9a810a"
+  },
+  {
+    "file": "p_adic_prefix_rarity_spl.tex",
+    "bytes": 11037,
+    "sha256": "032ddcb3394490bfe4a442d1871ae72c0df00728c029ea53a8312a540ec2ad95"
+  },
+  {
+    "file": "primary_claims.csv",
+    "bytes": 3276,
+    "sha256": "172f06803238d16c83b284354bec9e9925e8a5b6c2c3f0051e2c215b63e3b169"
+  },
+  {
+    "file": "README.md",
+    "bytes": 744,
+    "sha256": "92be979aac3ce80ca76710a142123b6d2d69d01f352beba8efaa854eb7fa9542"
+  },
+  {
+    "file": "references.bib",
+    "bytes": 3711,
+    "sha256": "220b52cfb7d3af5b16256d37f2431ff8395c95af3a051b6329acd9e98873a974"
+  },
+  {
+    "file": "reproduce_ieee_spl_artifacts.json",
+    "bytes": 2083,
+    "sha256": "7c30a485251ade3933ce3470e7d023d92c7dda27ee63366d61fdd7e74e7897f4"
+  },
+  {
+    "file": "strong_baseline_comparison.csv",
+    "bytes": 2614,
+    "sha256": "72826ee65a2552067d6cffda1a9eb288aa508296095dd50fb0cd74751f541a60"
+  },
+  {
+    "file": "vehicle_claims.csv",
+    "bytes": 924,
+    "sha256": "5b4b2045a81e28e68a3937bc444ec57aade708fbe775e5ce8c14580869169dec"
+  }
+]

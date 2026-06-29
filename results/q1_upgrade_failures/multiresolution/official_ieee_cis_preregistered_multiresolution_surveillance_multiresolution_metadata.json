@@ -1,0 +1,20 @@
+{
+  "dataset": "official_ieee_cis_preregistered_multiresolution_surveillance",
+  "synthetic_data_used": false,
+  "pre_registered_gates_doc": "docs/rebuild/20_Q1_SPL_PREREGISTERED_GATES.md",
+  "rows": 590540,
+  "train_rows": 413378,
+  "test_rows": 177162,
+  "n_blocks": 96,
+  "hierarchy": "DeviceType|card6|card4|ProductCD|P_emaildomain",
+  "block_label_rule": "positive_rate >= heldout_block_75th_percentile",
+  "high_risk_block_threshold": 0.04171180931744312,
+  "best_proposed_method": "p_adic_multiresolution_energy_cusum",
+  "best_control_method": "random_hierarchy_energy_cusum_seed_23",
+  "claim_status": "diagnostic_only_failed_q1_multiresolution_gate",
+  "figure_dpi": [
+    610.0064,
+    610.0064
+  ],
+  "data_root": "D:\\motif-entropy-fraud\\ieee-fraud-detection"
+}

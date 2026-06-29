@@ -1,0 +1,127 @@
+%% SoftwareX Original Software Publication draft for motif-entropy-fraud.
+%% Based on the official SoftwareX OSP LaTeX template downloaded from Elsevier.
+\documentclass[preprint,12pt,a4paper]{elsarticle}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\setlength{\parindent}{0pt}
+\journal{SoftwareX}
+
+\begin{document}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+\begin{frontmatter}
+
+\title{Motif Entropy Fraud: A Fail-Closed Audit Pipeline for Hierarchy-Aware Fraud Surveillance}
+
+\author{Abishek Rao M.}
+\address{RV College of Engineering, Bengaluru, India}
+
+\begin{abstract}
+Motif Entropy Fraud is a Python research pipeline for auditing hierarchy-aware categorical fraud-surveillance hypotheses without overclaiming unsupported detector performance. The software implements p-adic encodings, prefix-rarity scores, temporal surveillance signals, strong supervised baselines, and a parent-conditional tree-scan diagnostic for event streams. It packages curated results, claim-status tables, and reproducibility checks for official IEEE-CIS Fraud Detection and CSE-CIC-IDS2018 audit tracks. The current evidence is intentionally fail-closed: the software shows where p-adic/tree-scan signals carry diagnostic structure, but it also records that they do not establish statistically significant superiority over simple entropy, count, flat, or strong supervised controls. The package is intended for researchers who need an auditable base for testing hierarchy-aware anomaly hypotheses and for documenting negative/diagnostic results as carefully as positive ones.
+\end{abstract}
+
+\begin{keyword}
+research software \sep fraud surveillance \sep p-adic encoding \sep categorical event streams \sep reproducibility
+\end{keyword}
+
+\end{frontmatter}
+
+\section*{Required Metadata}
+
+\section*{Current code version}
+\begin{table}[!h]
+\begin{tabular}{|l|p{6.5cm}|p{6.5cm}|}
+\hline
+\textbf{Nr.} & \textbf{Code metadata description} & \textbf{Please fill in this column} \\
+\hline
+C1 & Current code version & v0.1.0, SoftwareX preparation draft, 2026-06-29 \\
+\hline
+C2 & Permanent GitHub link to code/repository used for this code version & https://github.com/abishekraom/motif-entropy-fraud. SoftwareX requires a public GitHub URL; this is the current submission blocker. \\
+\hline
+C3 & Legal Code License & MIT License, pending final author confirmation before public release \\
+\hline
+C4 & Code versioning system used & git \\
+\hline
+C5 & Software code languages, tools, and services used & Python; pandas, NumPy, scikit-learn, SciPy, NetworkX, matplotlib, Pillow, PyYAML, tabulate; optional LightGBM, CatBoost, and XGBoost for strong baselines \\
+\hline
+C6 & Compilation requirements, operating environments \& dependencies & Python 3.11+; tested/prepared on Windows 10 with Git Bash; install with \texttt{python -m pip install -e .[dev]} for lightweight verification or \texttt{.[dev,strong-baselines]} for full strong-baseline audits \\
+\hline
+C7 & If available Link to developer documentation/manual & Repository \texttt{README.md}, \texttt{data/README.md}, \texttt{results/README.md}, and \texttt{understanding/} documentation; public URL pending \\
+\hline
+C8 & Support email for questions & Author contact email to be supplied in Editorial Manager before submission \\
+\hline
+\end{tabular}
+\caption{Code metadata (mandatory)}
+\end{table}
+
+\section{Motivation and significance}
+Fraud and cyber-security event streams often contain categorical fields with a natural or analyst-chosen hierarchy. A transaction may be grouped by product, card type, device, or e-mail domain; a network flow may be grouped by protocol, port band, exact port, and flag counts. Standard flat encodings make exact combinations visible but hide shared prefixes. Marginal statistics are simpler but can erase branch-local concentration. Motif Entropy Fraud was developed to make this design question auditable: when does a hierarchy-aware p-adic or prefix-ball statistic add evidence, and when do simple controls explain the same signal?
+
+The scientific value of the software is its fail-closed discipline. The repository records negative and diagnostic outcomes rather than polishing them into unsupported detector claims. On official IEEE-CIS data, compact tree-boosting baselines are much stronger than raw p-adic prefix rarity. In block surveillance gates, a parent-conditional tree scan improves over the raw tree scan, but every current cross-dataset superiority gate remains diagnostic because paired confidence intervals cross zero or entropy/count controls win. This makes the software useful as a reproducibility base for researchers testing hierarchy-aware categorical surveillance hypotheses.
+
+\section{Software description}
+\subsection{Software architecture}
+The package is organized under \texttt{src/motif\_fraud}. The \texttt{p\_adic} subpackage is the main SoftwareX target. It contains number-theoretic primitives, train-only categorical encoders, prefix-rarity scorers, temporal block utilities, strong-baseline comparisons, tree-scan CUSUM diagnostics, claim-audit helpers, and reproduction-plan entry points. Supporting modules under \texttt{data}, \texttt{features}, \texttt{motifs}, \texttt{nulls}, \texttt{evaluation}, and \texttt{pipeline} preserve earlier motif and local-graph audit functionality.
+
+A typical audit flow is: load official data; apply a temporal train/test split; infer train-only hierarchy encodings; compute proposed p-adic or tree-scan scores; compute flat, marginal, reversed-hierarchy, random-hierarchy, entropy, count, and strong supervised controls; write block-level metrics, figures, manifests, and claim-status tables; and then audit every manuscript claim against those artifacts.
+
+\subsection{Software functionalities}
+Major functions include p-adic distance and valuation checks, hierarchy encoding, prefix-rarity scoring, temporal CUSUM-style block aggregation, strong tabular baselines, parent-conditional tree-scan LLR scoring, CSE-CIC timestamp normalization, claim-status table generation, and reproduction-plan writing. The package also contains tests that enforce leakage-safe splits, source-backed artifacts, manuscript claim safety, and fail-closed status handling.
+
+\section{Illustrative examples}
+A lightweight verification run writes the SoftwareX/reproduction command plan without recomputing every expensive real-data audit:
+\begin{verbatim}
+PYTHONPATH=src python -m motif_fraud.p_adic.reproduce_all --plan-only
+\end{verbatim}
+
+The current official IEEE-CIS tree-scan audit can be regenerated when raw Kaggle data are present:
+\begin{verbatim}
+PYTHONPATH=src python -m motif_fraud.p_adic.tree_scan_cusum \
+  --dataset ieee --output-root outputs/p_adic_ieee_cis_tree_scan
+\end{verbatim}
+
+For a fresh external day from CSE-CIC-IDS2018, the frozen Wednesday command is:
+\begin{verbatim}
+PYTHONPATH=src python -m motif_fraud.p_adic.tree_scan_cusum \
+  --dataset cse-cic-wednesday \
+  --data-root data/cse_cic_ids2018/Wednesday-28-02-2018_TrafficForML_CICFlowMeter.csv \
+  --output-root outputs/p_adic_cse_cic_wednesday_tree_scan \
+  --n-blocks 96 --bootstrap-samples 500 \
+  --random-hierarchy-seeds 11,17,23,31,47
+\end{verbatim}
+
+Curated derived artifacts are indexed under \texttt{results/}. For example, the IEEE-CIS conditional tree-scan result reports best proposed AUPRC 0.297719 versus transaction-count control AUPRC 0.285952, but the paired bootstrap interval [-0.070532, 0.122167] crosses zero. The CSE-CIC Thursday and Wednesday gates are both beaten by category entropy controls. The software therefore records these as diagnostic failures, not detector wins.
+
+\section{Impact}
+The software improves research practice by making hierarchy-aware anomaly claims falsifiable. It gives future users a tested base for asking whether p-adic encodings, prefix-ball aggregation, or tree-scan residuals add information beyond obvious controls. The curated artifacts also provide examples of what not to claim: high raw scores are insufficient when strong supervised baselines, entropy, count, or flat controls explain the result.
+
+The package is especially useful for researchers working with categorical event streams where hierarchy design is part of the hypothesis. It can be adapted to fraud, intrusion, claims, or other event-log domains after the hierarchy, labels, block construction, controls, and pass/fail gate are preregistered. The current repository already demonstrates this discipline across IEEE-CIS Fraud Detection and two CSE-CIC-IDS2018 days.
+
+The current limitation is also explicit. The software is not evidence for a state-of-the-art fraud detector. Its strongest current contribution is a reproducible audit framework and diagnostic record. A future positive detector claim would require a new independent preregistered dataset, public software release, and strictly positive paired intervals against the best simple and strong controls.
+
+\section{Conclusions}
+Motif Entropy Fraud packages a claim-disciplined audit workflow for p-adic and motif-style fraud-surveillance hypotheses. Its value is not a flattering detector result; its value is that it makes such claims testable, reproducible, and hard to overstate. The SoftwareX submission can proceed only with a public GitHub repository, OSI license confirmation, and final author review of the manuscript and disclosures.
+
+\section*{Data availability}
+Raw third-party datasets are not redistributed in the repository. IEEE-CIS Fraud Detection data must be obtained from the official Kaggle competition page by users who accept Kaggle's terms. CSE-CIC-IDS2018 data must be obtained from the Canadian Institute for Cybersecurity / AWS Open Data source. The repository documents expected local file placement and includes curated derived metrics, claim tables, and figures in \texttt{results/} where redistribution is permitted.
+
+\section*{Declaration of competing interest}
+The author declares no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper. The author must confirm this statement before submission.
+
+\section*{Generative AI disclosure}
+During the preparation of this work the author used Hermes Agent with OpenAI Codex/gpt-5.5 assistance to inspect the repository, draft audit/checklist text, and prepare manuscript scaffolding. After using this tool, the author must review and edit the content as needed and takes full responsibility for the content of the submitted article.
+
+\section*{Acknowledgements}
+Funding, institutional, collaborator, and data-provider acknowledgements will be supplied by the author if applicable before submission.
+
+\begin{thebibliography}{00}
+\bibitem{ieeecis} IEEE Computational Intelligence Society, IEEE-CIS Fraud Detection, Kaggle competition dataset.
+\bibitem{csecic} I. Sharafaldin, A. H. Lashkari, and A. A. Ghorbani, Toward generating a new intrusion detection dataset and intrusion traffic characterization, ICISSP, 2018.
+\bibitem{sklearn} F. Pedregosa et al., Scikit-learn: Machine learning in Python, Journal of Machine Learning Research, 2011.
+\bibitem{pandas} The pandas development team, pandas-dev/pandas: Pandas, Zenodo.
+\bibitem{networkx} A. Hagberg, P. Swart, and D. S Chult, Exploring network structure, dynamics, and function using NetworkX, 2008.
+\end{thebibliography}
+
+\section*{Current executable software version}
+Current executable software version is v0.1.0 in the local git repository. Public GitHub URL is required before SoftwareX submission.
+
+\end{document}
