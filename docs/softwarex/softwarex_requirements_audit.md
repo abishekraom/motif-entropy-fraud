@@ -45,3 +45,14 @@ LOCALLY_PREPARED_PUBLIC_GITHUB_URL_ASSIGNED_VERIFY_AFTER_PUSH
 ```
 
 This is not optional or a preference; it is a SoftwareX guide/template requirement.
+
+
+## Public GitHub verification
+
+Verified after push:
+
+```text
+https://github.com/abishekraom/motif-entropy-fraud
+visibility: PUBLIC
+GitHub Actions tests run 28359319014: success
+```

@@ -33,3 +33,27 @@ python scripts/softwarex_readiness_check.py              PASS
 ```
 
 Full `pytest -q` was not claimed as passed in this SoftwareX audit because previous full-suite attempts exceeded the interactive wait window.
+
+## Public GitHub and CI verification
+
+Verified public repository:
+
+```text
+https://github.com/abishekraom/motif-entropy-fraud
+visibility: PUBLIC
+default branch: master
+latest pushed commit: f4eb11f
+```
+
+Verified GitHub Actions run:
+
+```text
+workflow: tests
+run id: 28359319014
+status: success
+job: pytest in 38s
+observed test line: ...ssss..........s.......ssss.....s....s...sssssssssssss.............sss [ 96%] ... [100%]
+```
+
+Public CI intentionally skips raw-data tests when restricted datasets are absent. Raw-data tests still run locally when the corresponding raw dataset files are present.
+
