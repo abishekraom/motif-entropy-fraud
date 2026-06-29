@@ -2,10 +2,16 @@ import json
 from pathlib import Path
 
 import pandas as pd
+import pytest
 
 from motif_fraud.pipeline.reproduce_all import reproduce_all
 
+ELLIPTIC_ROOT = Path("data/elliptic_plusplus/elliptic_bitcoin_dataset")
+ELLIPTIC_AVAILABLE = (ELLIPTIC_ROOT / "elliptic_txs_classes.csv").exists()
+requires_elliptic = pytest.mark.skipif(not ELLIPTIC_AVAILABLE, reason="raw Elliptic++ data not available in public checkout")
 
+
+@requires_elliptic
 def test_reproduce_all_writes_manifest_and_rebuild_tables(tmp_path):
     manifest = reproduce_all(output_root=tmp_path, sample_nodes=400, null_permutations=3, seed=11)
 
@@ -26,6 +32,7 @@ def test_reproduce_all_writes_manifest_and_rebuild_tables(tmp_path):
         assert path.exists()
 
 
+@requires_elliptic
 def test_initial_local_audit_claim_table_keeps_negative_results_valid(tmp_path):
     reproduce_all(output_root=tmp_path, sample_nodes=350, null_permutations=2, seed=5)
 

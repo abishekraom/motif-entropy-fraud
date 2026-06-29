@@ -1,13 +1,17 @@
 from pathlib import Path
 
 import pandas as pd
+import pytest
 
 from motif_fraud.data.elliptic import EllipticDataset, load_elliptic
 
 
 DATA_ROOT = Path("data/elliptic_plusplus/elliptic_bitcoin_dataset")
+ELLIPTIC_AVAILABLE = (DATA_ROOT / "elliptic_txs_classes.csv").exists()
+requires_elliptic = pytest.mark.skipif(not ELLIPTIC_AVAILABLE, reason="raw Elliptic++ data not available in public checkout")
 
 
+@requires_elliptic
 def test_load_elliptic_returns_stable_contract_with_labels_time_and_edges():
     dataset = load_elliptic(DATA_ROOT)
 
@@ -21,6 +25,7 @@ def test_load_elliptic_returns_stable_contract_with_labels_time_and_edges():
     assert len(dataset.edges) > 230_000
 
 
+@requires_elliptic
 def test_temporal_edges_at_cutoff_do_not_include_future_nodes():
     dataset = load_elliptic(DATA_ROOT)
     cutoff = 10
@@ -33,6 +38,7 @@ def test_temporal_edges_at_cutoff_do_not_include_future_nodes():
     assert node_times.loc[temporal_edges["dst"]].max() <= cutoff
 
 
+@requires_elliptic
 def test_dataset_summary_reports_label_counts_and_unknowns_explicitly():
     dataset = load_elliptic(DATA_ROOT)
     summary = dataset.summary()
@@ -45,6 +51,7 @@ def test_dataset_summary_reports_label_counts_and_unknowns_explicitly():
     assert summary["n_time_steps"] == dataset.nodes["time_step"].nunique()
 
 
+@requires_elliptic
 def test_loader_can_sample_rows_for_fast_debug_without_changing_schema():
     dataset = load_elliptic(DATA_ROOT, max_nodes=1000)
 
