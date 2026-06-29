@@ -75,15 +75,21 @@ The code uses this path as the default on Lust's Windows/Git Bash environment. Y
 
 ## Verify the repo
 
+Public lightweight CI:
+
 ```bash
 pytest -q
 ```
 
-Last verified locally:
+The public GitHub Actions workflow passes without raw third-party datasets; tests that require restricted raw datasets are skipped unless those files are present locally.
+
+Latest verified public CI:
 
 ```text
-55 passed, 2 warnings
+GitHub Actions tests run 28359405764: success
 ```
+
+Local full-data tests may take substantially longer when raw datasets are present. Do not claim a fresh full-data pass unless the final pytest summary is captured.
 
 ## Reproduce key artifacts
 
