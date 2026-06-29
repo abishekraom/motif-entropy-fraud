@@ -3,6 +3,7 @@
 \documentclass[preprint,12pt,a4paper]{elsarticle}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage{xurl}
 \setlength{\parindent}{0pt}
 \journal{SoftwareX}
 
@@ -35,17 +36,17 @@ research software \sep fraud surveillance \sep p-adic encoding \sep categorical 
 \hline
 C1 & Current code version & v0.1.0, SoftwareX preparation draft, 2026-06-29 \\
 \hline
-C2 & Permanent GitHub link to code/repository used for this code version & https://github.com/abishekraom/motif-entropy-fraud. SoftwareX requires a public GitHub URL; this is the current submission blocker. \\
+C2 & Permanent GitHub link to code/repository used for this code version & \url{https://github.com/abishekraom/motif-entropy-fraud} (public repository, verified by GitHub Actions CI). \\
 \hline
-C3 & Legal Code License & MIT License, pending final author confirmation before public release \\
+C3 & Legal Code License & MIT License, pending final author confirmation before journal submission \\
 \hline
 C4 & Code versioning system used & git \\
 \hline
 C5 & Software code languages, tools, and services used & Python; pandas, NumPy, scikit-learn, SciPy, NetworkX, matplotlib, Pillow, PyYAML, tabulate; optional LightGBM, CatBoost, and XGBoost for strong baselines \\
 \hline
-C6 & Compilation requirements, operating environments \& dependencies & Python 3.11+; tested/prepared on Windows 10 with Git Bash; install with \texttt{python -m pip install -e .[dev]} for lightweight verification or \texttt{.[dev,strong-baselines]} for full strong-baseline audits \\
+C6 & Compilation requirements, operating environments \& dependencies & Python 3.11+; tested on Windows 10 and public GitHub Actions Ubuntu CI; install with editable pip extras \texttt{[dev]} or \texttt{[dev,strong-baselines]}. \\
 \hline
-C7 & If available Link to developer documentation/manual & Repository \texttt{README.md}, \texttt{data/README.md}, \texttt{results/README.md}, and \texttt{understanding/} documentation; public URL pending \\
+C7 & If available Link to developer documentation/manual & Repository documentation: \texttt{README.md}, \texttt{data/README.md}, \texttt{results/README.md}, \texttt{docs/softwarex/}, and \texttt{docs/rebuild/}. \\
 \hline
 C8 & Support email for questions & Author contact email to be supplied in Editorial Manager before submission \\
 \hline
